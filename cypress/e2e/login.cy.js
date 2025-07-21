@@ -1,4 +1,18 @@
 describe('template spec', () => {
+
+  it('form submit test', () => {
+    cy.visit('http://localhost:5173/')
+
+    cy.get('[data-cy="input-email"]').type("erdem.guntay@wit.com.tr");
+    cy.get('[data-cy="input-password"]').type("9fxIH0GXesEwH_I");
+    cy.get('[data-cy="input-terms"]').check();
+    cy.get('[data-cy="input-button"]').click();
+    cy.contains("Başarılı giriş yaptınız");
+    
+
+     
+  })
+
   it('wrong email', () => {
     cy.visit('http://localhost:5173/')
 
